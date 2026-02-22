@@ -21,6 +21,6 @@ export const SITE = {
   },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
-  lang: "en", // html lang code. Set this empty and default will be "en"
-  timezone: "Asia/Karachi", // Default global timezone (IANA format)
+  lang: "en-US", // html lang code
+  timezone: "America/New_York", // New York timezone (IANA format)
 } as const;

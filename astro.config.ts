@@ -14,7 +14,7 @@ import { SITE } from "./src/config";
 // https://astro.build/config
 export default defineConfig({
   // Force correct canonical base for sitemap
-  site: "https://freetabletclick.pages.dev",
+  site: "https://freetablet.click/",
 
   integrations: [
     sitemap({

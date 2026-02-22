@@ -2,12 +2,206 @@
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+
+const pageUrl = "https://freetablet.click/"; // apna exact page URL lagao
+const siteUrl = "https://freetablet.click/";
+const pageTitle = "Get Your Free Government Tablet and Internet Today | 2026 Guide";
+const pageDescription =
+  "Find out how eligible households may get a free government tablet, low-cost internet, or a free tablet with EBT through Lifeline, local digital inclusion programs, and VA-connected telehealth support options.";
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl,
+      "name": pageTitle,
+      "description": pageDescription,
+      "isPartOf": {
+        "@id": `${siteUrl}#website`
+      },
+      "about": [
+        { "@type": "Thing", "name": "Lifeline Program" },
+        { "@type": "Thing", "name": "Free Government Tablet" },
+        { "@type": "Thing", "name": "Low-Cost Internet" },
+        { "@type": "Thing", "name": "EBT Tablet Eligibility" }
+      ],
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}Programs.webp`
+      },
+      "inLanguage": "en-US"
+    },
+
+    // 👇 NEW: Site Navigation Schema Add Kar Diya Hai 👇
+    {
+      "@type": "SiteNavigationElement",
+      "@id": `${pageUrl}#navigation`,
+      "name": [
+        "Check Eligibility", 
+        "Government Programs", 
+        "Device & Plans", 
+        "Top Providers", 
+        "State Availability", 
+        "Scam Safety", 
+        "FAQ"
+      ],
+      "url": [
+        `${pageUrl}#checker`,
+        `${pageUrl}#programs`,
+        `${pageUrl}#plans`,
+        `${pageUrl}#providers-directory`,
+        `${pageUrl}#state-availability`,
+        `${pageUrl}#scam-safety`,
+        `${pageUrl}#faq`
+      ]
+    },
+
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there really a free government tablet program in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is not one single nationwide tablet giveaway program for everyone. In 2026, most people get help through a mix of Lifeline service discounts, provider promotions, local digital inclusion programs, and special pathways such as VA telehealth support for eligible veterans."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Did ACP end?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Affordable Connectivity Program ended, which is why many older pages are outdated."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I qualify with EBT or SNAP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, many users who receive SNAP or EBT may qualify for Lifeline or other support pathways depending on their state and provider options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What income level qualifies for Lifeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lifeline eligibility may be available if your household income is at or below 135% of the Federal Poverty Guidelines, or if you participate in qualifying assistance programs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can more than one person in my home get Lifeline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lifeline generally allows one benefit per household, not per person."
+          }
+        }
+      ]
+    },
+
+    {
+      "@type": "ItemList",
+      "@id": `${pageUrl}#providers`,
+      "name": "Top Lifeline Providers Offering Tablet and Internet Options",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Assurance Wireless",
+          "url": `${siteUrl}providers/assurance-wireless`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AirTalk Wireless",
+          "url": `${siteUrl}airtalk-wireless`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "StandUp Wireless",
+          "url": `${siteUrl}standup-wireless`
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "SafeLink Wireless",
+          "url": `${siteUrl}safelink-wireless`
+        }
+      ]
+    },
+
+    {
+      "@type": "ItemList",
+      "@id": `${pageUrl}#states`,
+      "name": "State-by-State Free Government Tablet Availability",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "California",
+          "url": `${siteUrl}states/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Texas",
+          "url": `${siteUrl}states/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "New York",
+          "url": `${siteUrl}states/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Florida",
+          "url": `${siteUrl}states/`
+        }
+      ]
+    },
+
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}#organization`,
+      "name": "FreeTablet.click",
+      "url": siteUrl,
+      "email": "support@freetablet.click"
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      "url": siteUrl,
+      "name": "FreeTablet.click",
+      "publisher": {
+        "@id": `${siteUrl}#organization`
+      },
+      "inLanguage": "en-US"
+    }
+  ]
+};
 ---
 
-<Layout title="Get Your Free Government Tablet and Internet Today | 2026 Guide">
-  <Header />
+<Layout title={pageTitle} description={pageDescription}>
   
-  <main id="main-content" class="w-full flex-1 flex flex-col items-center">
+  <Header />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schemaGraph)} />
+  <main>
+    <section class="relative w-full flex flex-col items-center justify-center overflow-hidden bg-[#0f172a] text-white pt-20 pb-32 lg:pt-28 lg:pb-40" style="background-image: radial-gradient(circle at top right, rgba(37, 99, 235, 0.15), transparent 40%), radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent 40%);">
     
     <!-- ==========================================
          SECTION 1: PREMIUM HERO (PERFORMANCE OPTIMIZED)

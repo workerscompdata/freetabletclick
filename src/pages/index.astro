@@ -868,6 +868,95 @@ import Footer from "@/components/Footer.astro";
       </div>
     </section>
 
+    <!-- ==========================================
+         SECTION 8: SCAM AWARENESS & SAFETY GUIDE (E-E-A-T)
+    =========================================== -->
+    <section id="scam-safety" class="relative w-full py-20 lg:py-28 bg-slate-50 border-t border-border" style="content-visibility: auto;">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Left Column: Image & Promise Box -->
+          <div class="lg:col-span-5 flex flex-col gap-8 lg:sticky lg:top-8">
+            
+            <!-- Optimized Lazy Loaded Image to prevent CLS and maintain 100% Speed -->
+            <div class="relative w-full rounded-2xl overflow-hidden shadow-xl border border-border bg-white aspect-[4/3] flex items-center justify-center">
+              <img 
+                 src="/scams.webp" 
+                 alt="Protect yourself from free government tablet scams in 2026" 
+                 loading="lazy" 
+                 decoding="async" 
+                 width="600" 
+                 height="450"
+                 class="w-full h-full object-cover"
+              />
+            </div>
+            
+            <!-- Safety Promise Box -->
+            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-6 sm:p-8 shadow-sm">
+              <div class="flex items-center gap-3 mb-4">
+                <svg class="w-6 h-6 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <h3 class="text-xl font-extrabold text-primary">Safety Promise Box</h3>
+              </div>
+              <p class="text-foreground/80 leading-relaxed font-medium">
+                We will never claim that every user gets a <strong>free iPad</strong> or premium device. Real offers depend on eligibility, provider inventory, and local availability. We explain both free and low-cost options so you can make a safe decision.
+              </p>
+            </div>
+            
+          </div>
+
+          <!-- Right Column: Content & Warning List -->
+          <div class="lg:col-span-7 flex flex-col pt-2 lg:pt-0">
+            
+            <!-- Alert Badge -->
+            <div class="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-2 text-sm font-bold text-red-700 mb-6 self-start shadow-sm">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              Fraud Alert & Safety Guide
+            </div>
+            
+            <h2 class="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl mb-6">
+              How to Avoid Free Tablet Scams in 2026
+            </h2>
+            
+            <p class="text-lg text-foreground/75 leading-relaxed mb-8">
+              Scam pages often use old ACP language, fake “instant approval” claims, or pressure tactics to collect your personal information. Our goal is to help you stay safe while applying for real connectivity support.
+            </p>
+
+            <!-- Warning List Highlight Box -->
+            <div class="bg-white rounded-2xl border border-border p-6 sm:p-8 shadow-sm mb-8">
+              <h3 class="text-lg font-bold text-foreground mb-6 border-b border-border pb-4">Red Flags to Watch Out For</h3>
+              <ul class="space-y-4">
+                {[
+                  "Never pay a large upfront fee for a “guaranteed” free government tablet",
+                  "Be cautious of sites that still advertise ACP as active without updated information",
+                  "Only apply through verified providers or official program pathways",
+                  "Do not share bank or credit card information unless you understand exactly why it is required",
+                  "Watch for fake shipping fee traps and “reservation” charges",
+                  "Double-check URLs before uploading your documents"
+                ].map(warning => (
+                  <li class="flex items-start gap-3">
+                    <div class="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-red-50 text-red-500 flex items-center justify-center">
+                      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </div>
+                    <span class="text-foreground/85 font-semibold leading-snug">{warning}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Compliance-Focused Note -->
+            <div class="bg-muted/50 p-5 rounded-xl border border-border">
+              <h4 class="text-sm font-bold text-foreground mb-2">Compliance-Focused Note</h4>
+              <p class="text-xs text-foreground/70 leading-relaxed font-medium">
+                Lifeline is a federally administered support program, and one benefit per household rules apply. Some applicants may need to provide identity, address, and eligibility documents, and a household worksheet may be required if another adult at the same address already receives Lifeline.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
   
   <Footer />

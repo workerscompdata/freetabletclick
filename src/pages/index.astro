@@ -102,7 +102,6 @@ import Footer from "@/components/Footer.astro";
 
     <!-- ==========================================
          SECTION 2: WHY CHOOSE US & TRUST STATS
-         (content-visibility auto improves page speed)
     =========================================== -->
     <section class="relative w-full bg-muted pb-20 lg:pb-28" style="content-visibility: auto;">
       
@@ -330,12 +329,172 @@ import Footer from "@/components/Footer.astro";
               </div>
 
               <p class="mt-8 text-xs text-foreground/60 leading-relaxed text-center">
-                Lifeline eligibility is commonly based on participation in qualifying programs or income at or below 135% of the Federal Poverty Guidelines. One Lifeline benefit is allowed per household. (Universal Service Administrative Company)
+                Lifeline eligibility is commonly based on participation in qualifying programs or income at or below 135% of the Federal Poverty Guidelines. One Lifeline benefit is allowed per household.
               </p>
             </div>
 
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: THE ULTIMATE GOVERNMENT PROGRAMS
+    =========================================== -->
+    <section id="programs" class="relative w-full py-20 lg:py-28 bg-muted border-t border-border" style="content-visibility: auto;">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Intro & Image Split Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="flex flex-col">
+            <h2 class="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-5xl mb-6">
+              2026 Programs That May Help You Get a Tablet or Affordable Internet
+            </h2>
+            <p class="text-lg text-foreground/75 leading-relaxed">
+              If you are searching for a free government tablet, the most important thing to know is this: there is no single nationwide tablet giveaway program. In 2026, access usually comes through a combination of federal discounts, local digital inclusion programs, provider promotions, and special programs for veterans or housing communities.
+            </p>
+          </div>
+          <!-- Optimized Image with strict width/height ratio to prevent layout shifts -->
+          <div class="w-full flex justify-center lg:justify-end">
+            <div class="w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-xl border border-border bg-white flex items-center justify-center">
+               <img 
+                 src="/Programs.webp" 
+                 alt="2026 Government Programs Overview" 
+                 loading="lazy" 
+                 decoding="async" 
+                 width="800" 
+                 height="450"
+                 class="w-full h-full object-cover"
+               />
+            </div>
+          </div>
+        </div>
+
+        <!-- 2x2 Programs Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          
+          <!-- Program Card 1 -->
+          <div class="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-12 h-12 rounded-lg bg-blue-50 text-primary-light flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-foreground">Lifeline Program (Federal)</h3>
+            </div>
+            <p class="text-foreground/75 leading-relaxed mb-6 flex-grow">
+              Lifeline is a federal program that helps lower the monthly cost of phone or internet service for eligible households. The benefit is up to $9.25 per month, and up to $34.25 per month for eligible consumers on Tribal lands. Some providers may bundle device offers, including tablets, based on inventory and local promotions. Lifeline can be used for mobile or home internet service through participating companies.
+            </p>
+            <div class="bg-muted/50 rounded-xl p-5 border border-border">
+              <h4 class="text-sm font-bold text-foreground mb-3 uppercase tracking-wider">Key Notes</h4>
+              <ul class="space-y-2">
+                {["Monthly discount program, not a guaranteed free device program", "Eligibility can be based on income or qualifying programs like SNAP and Medicaid", "Annual recertification is required to keep benefits active", "One benefit per household rule applies"].map((note) => (
+                  <li class="flex items-start gap-2 text-sm text-foreground/80">
+                    <svg class="w-4 h-4 text-primary-light mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>{note}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <!-- Program Card 2 -->
+          <div class="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-12 h-12 rounded-lg bg-green-50 text-success flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-foreground">ConnectHomeUSA (HUD)</h3>
+            </div>
+            <p class="text-foreground/75 leading-relaxed mb-6 flex-grow">
+              ConnectHomeUSA is HUD’s digital inclusion initiative that helps HUD-assisted communities build local solutions for affordable internet, devices, and digital skills training. This is not a single national checkout-style application for every consumer. Instead, local housing authorities and partners may offer programs that connect residents with low-cost or free/affordable devices and internet resources.
+            </p>
+            <div class="bg-muted/50 rounded-xl p-5 border border-border">
+              <h4 class="text-sm font-bold text-foreground mb-3 uppercase tracking-wider">Key Notes</h4>
+              <ul class="space-y-2">
+                {["Best for residents in HUD-assisted housing communities", "Focuses on internet access, devices, and digital skills", "Availability depends on local participating organizations and community programs"].map((note) => (
+                  <li class="flex items-start gap-2 text-sm text-foreground/80">
+                    <svg class="w-4 h-4 text-primary-light mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>{note}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <!-- Program Card 3 -->
+          <div class="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-12 h-12 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-foreground">VA Telehealth Device Support</h3>
+            </div>
+            <p class="text-foreground/75 leading-relaxed mb-6 flex-grow">
+              Eligible veterans who need telehealth access may be able to receive help through the VA’s Digital Divide Consult process. VA resources can help qualifying veterans access internet support options and, in some cases, VA-loaned connected devices for telehealth use. Veterans typically start by speaking with their VA care team or provider.
+            </p>
+            <div class="bg-muted/50 rounded-xl p-5 border border-border">
+              <h4 class="text-sm font-bold text-foreground mb-3 uppercase tracking-wider">Key Notes</h4>
+              <ul class="space-y-2">
+                {["Designed for telehealth access and care connectivity", "Device support is based on eligibility and clinical need", "Start by asking your VA provider about a Digital Divide Consult"].map((note) => (
+                  <li class="flex items-start gap-2 text-sm text-foreground/80">
+                    <svg class="w-4 h-4 text-primary-light mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>{note}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <!-- Program Card 4 -->
+          <div class="bg-white rounded-2xl p-8 border border-border shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-12 h-12 rounded-lg bg-orange-50 text-accent flex items-center justify-center shrink-0">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-foreground">State and Local Programs</h3>
+            </div>
+            <p class="text-foreground/75 leading-relaxed mb-6 flex-grow">
+              Many cities, counties, libraries, schools, and nonprofits offer temporary or ongoing tablet and internet help. These programs may include free tablets, loaner devices, discounted broadband, student support programs, and community tech grants. Availability changes by location and funding cycle, which is why local pages matter for SEO and real user outcomes.
+            </p>
+            <div class="bg-muted/50 rounded-xl p-5 border border-border">
+              <h4 class="text-sm font-bold text-foreground mb-3 uppercase tracking-wider">Key Notes</h4>
+              <ul class="space-y-2">
+                {["Highly location-specific", "May prioritize students, seniors, or public housing residents", "Often limited-time funding with waitlists"].map((note) => (
+                  <li class="flex items-start gap-2 text-sm text-foreground/80">
+                    <svg class="w-4 h-4 text-primary-light mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                    <span>{note}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Trust Box / Alert -->
+        <div class="bg-orange-50 border border-orange-200 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-center shadow-sm">
+          <div class="flex-shrink-0 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+            <svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-orange-900 mb-2">Important 2026 Update</h3>
+            <p class="text-orange-800 leading-relaxed font-medium">
+              The <strong>ACP benefit ended</strong>, so any site still promising an "ACP free tablet" without clarification may be outdated. We provide updated alternatives through Lifeline, local programs, and veteran-focused telehealth access pathways.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -356,6 +515,8 @@ import Footer from "@/components/Footer.astro";
     const resultTitle = document.getElementById("result-title");
     const resultMessage = document.getElementById("result-message");
     const resultAction = document.getElementById("result-action");
+
+    if(!verifyBtn) return; // Prevent errors if on different layout
 
     // 2026 Proxy FPG 135% (Base $21,128 for 1, +$7,425 per additional)
     const baseIncomeLimit = 21128;

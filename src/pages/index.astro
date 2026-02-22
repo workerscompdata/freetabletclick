@@ -1,121 +1,106 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Socials from "@/components/Socials.astro";
-import LinkButton from "@/components/LinkButton.astro";
-import Card from "@/components/Card.astro";
-import getSortedPosts from "@/utils/getSortedPosts";
-import IconRss from "@/assets/icons/IconRss.svg";
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
-import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
-
-const posts = await getCollection("blog");
-
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 ---
 
-<Layout>
+<Layout title="Get Your Free Government Tablet and Internet Today | 2026 Guide">
   <Header />
-  <main id="main-content" data-layout="index" class="app-layout">
-    <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
-      </h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="inline-block"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
+  
+  <main id="main-content" class="w-full flex-1 flex flex-col items-center">
+    
+    <!-- ==========================================
+         SECTION 1: HERO
+    =========================================== -->
+    <section class="relative w-full overflow-hidden pt-12 pb-12 sm:pt-20 sm:pb-16 lg:pb-24 border-b border-border">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+          
+          <!-- Content Column -->
+          <div class="flex flex-col items-start max-w-2xl">
+            
+            <!-- Trust Badge -->
+            <div class="inline-flex items-center gap-2 rounded-full border border-border bg-muted/30 px-3 py-1.5 text-sm font-semibold text-foreground mb-6">
+              <span aria-hidden="true">🇺🇸</span>
+              <span>100% Legitimate Federal & State Info | Updated 2026</span>
+            </div>
 
-      <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
-      </p>
-      <p class="mt-2">
-        Read the blog posts or check
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex max-sm:flex-col sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
+            <!-- H1 Headline -->
+            <h1 class="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              Get Your Free Government Tablet <span class="text-accent">and Internet Today</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="mt-6 text-lg leading-relaxed text-foreground/90 sm:text-xl font-medium">
+              Find out how eligible households may get a free government tablet, low-cost internet, or a free tablet with EBT through Lifeline, local digital inclusion programs, and VA-connected telehealth support options. Built for seniors, students, veterans, and families who need affordable access.
+            </p>
+
+            <!-- Support Text -->
+            <p class="mt-4 text-base leading-relaxed text-foreground/75">
+              We help you understand the real options in 2026, including what is truly free, what may require a small provider co-pay, and which programs are available in your area. No hype. No fake offers. Just clear guidance based on current program rules and provider availability.
+            </p>
+
+            <!-- Bullet Points -->
+            <ul class="mt-8 space-y-3 w-full">
+              {
+                [
+                  "No hidden fees guidance",
+                  "Fast online application steps",
+                  "Free or discounted mobile internet options",
+                  "Popular tablet brands may be available through participating providers",
+                  "State-by-state help for local eligibility differences"
+                ].map((point) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="h-6 w-6 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-base font-medium text-foreground/85">{point}</span>
+                  </li>
+                ))
+              }
+            </ul>
+
+            <!-- CTAs -->
+            <div class="mt-10 flex w-full flex-col gap-4 sm:flex-row">
+              <a href="#apply" class="inline-flex items-center justify-center rounded-md bg-accent px-8 py-3.5 text-base font-bold text-background shadow-sm hover:bg-accent/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-all duration-200">
+                Apply Now
+              </a>
+              <button type="button" class="inline-flex items-center justify-center rounded-md border-2 border-accent bg-transparent px-8 py-3.5 text-base font-bold text-accent hover:bg-accent/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent transition-all duration-200">
+                Check My Eligibility
+              </button>
+            </div>
+
+            <!-- Micro Disclaimer -->
+            <p class="mt-6 text-xs text-foreground/60 leading-relaxed max-w-xl">
+              Device availability, shipping times, and co-pay amounts vary by provider, state, and eligibility type. Lifeline is a monthly service discount program, and tablet offers depend on participating providers. (Universal Service Administrative Company)
+            </p>
           </div>
-        )
-      }
+
+          <!-- Right Column (No Image, SVG/CSS Layout instead to keep it live) -->
+          <div class="relative mx-auto w-full max-w-lg lg:max-w-none">
+            <div class="aspect-[4/3] w-full rounded-2xl bg-muted/20 border border-border flex flex-col items-center justify-center p-8 text-center shadow-sm relative z-10">
+              
+              <!-- Clean SVG Icon for Tablet & Connectivity -->
+              <svg class="w-32 h-32 text-accent/80 mb-6 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+              </svg>
+              
+              <h3 class="text-2xl font-bold text-foreground mb-2">Stay Connected</h3>
+              <p class="text-foreground/70 font-medium max-w-xs">Access education, telehealth, and opportunities today.</p>
+              
+            </div>
+            
+            <!-- Decorative Background Glow -->
+            <div class="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-accent/20 to-transparent blur-2xl" aria-hidden="true"></div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    {
-      featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-b border-border": recentPosts.length > 0 },
-          ]}
-        >
-          <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
-          <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
-            ))}
-          </ul>
-        </section>
-      )
-    }
+    <!-- Hum baqi sections yahan add karte jayenge -->
 
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
-        </section>
-      )
-    }
-
-    <div class="my-8 text-center">
-      <LinkButton href="/posts/">
-        All Posts
-        <IconArrowRight class="inline-block rtl:-rotate-180" />
-      </LinkButton>
-    </div>
   </main>
+  
   <Footer />
 </Layout>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
-      ?.dataset?.layout;
-    if (indexLayout) {
-      sessionStorage.setItem("backUrl", "/");
-    }
-  });
-</script>

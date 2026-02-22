@@ -31,20 +31,59 @@ const {
 
 const socialImageURL = new URL(ogImage, Astro.url);
 
+// ADVANCED SEO SCHEMA (Organization + WebSite + WebPage/Article)
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: `${title}`,
-  image: `${socialImageURL}`,
-  datePublished: `${pubDatetime?.toISOString()}`,
-  ...(modDatetime && { dateModified: modDatetime.toISOString() }),
-  author: [
+  "@graph": [
     {
-      "@type": "Person",
-      name: `${author}`,
-      ...(profile && { url: profile }),
+      "@type": "WebSite",
+      "@id": `${Astro.site}#website`,
+      "url": `${Astro.site}`,
+      "name": SITE.title,
+      "description": SITE.desc,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": `${Astro.site}search?q={search_term_string}`,
+        "query-input": "required name=search_term_string"
+      }
     },
-  ],
+    {
+      "@type": "Organization",
+      "@id": `${Astro.site}#organization`,
+      "name": SITE.title,
+      "url": `${Astro.site}`,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${new URL("favicon.svg", Astro.site || "https://freetablet.click")}`
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-800-234-9473",
+        "contactType": "customer support",
+        "email": "support@freetablet.click"
+      }
+    },
+    {
+      "@type": pubDatetime ? "Article" : "WebPage", // Dynamically chooses Article if it's a blog post, otherwise WebPage
+      "@id": `${canonicalURL}#webpage`,
+      "url": `${canonicalURL}`,
+      "name": title,
+      "description": description,
+      "isPartOf": { "@id": `${Astro.site}#website` },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": `${socialImageURL}`
+      },
+      ...(pubDatetime && { 
+        "datePublished": pubDatetime.toISOString(),
+        "author": {
+          "@type": "Organization",
+          "name": SITE.title
+        }
+      }),
+      ...(modDatetime && { "dateModified": modDatetime.toISOString() })
+    }
+  ]
 };
 ---
 
@@ -61,26 +100,22 @@ const structuredData = {
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Load Font -->
     <Font
       cssVariable="--font-google-sans-code"
       preload={[{ subset: "latin", weight: 400, style: "normal" }]}
     />
 
-    <!-- General Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
     <meta name="author" content={author} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImageURL} />
 
-    <!-- Article Published/Modified time -->
     {
       pubDatetime && (
         <meta
@@ -98,27 +133,23 @@ const structuredData = {
       )
     }
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImageURL} />
 
-    <!-- Google JSON-LD Structured data -->
     <script
       type="application/ld+json"
       is:inline
       set:html={JSON.stringify(structuredData)}
     />
 
-    <!-- Enable RSS feed auto-discovery  -->
-    <!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery -->
     <link
       rel="alternate"
       type="application/rss+xml"
       title={SITE.title}
-      href={new URL("rss.xml", Astro.site)}
+      href={new URL("rss.xml", Astro.site || "https://freetablet.click")}
     />
 
     <meta name="theme-color" content="" />
@@ -137,7 +168,6 @@ const structuredData = {
 
     <ClientRouter />
 
-    <!-- Minimal inline script to prevent FOUC - sets theme immediately -->
     <script is:inline>
       (function () {
         const initialColorScheme = ""; // "light" | "dark"
@@ -170,7 +200,6 @@ const structuredData = {
   <body>
     <slot />
 
-    <!-- Load full theme logic -->
     <script src="../scripts/theme.ts"></script>
   </body>
 </html>

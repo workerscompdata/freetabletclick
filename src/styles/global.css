@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
-/* Import Premium Modern Font (Inter) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Restore the typography import for your blog posts */
+@import "./typography.css";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
@@ -11,7 +12,7 @@
   --foreground: #0f172a; /* Slate 900 */
   --primary: #1e3a8a; /* Blue 900 - Trust/Authority */
   --primary-light: #2563eb; /* Blue 600 - CTAs */
-  --accent: #f59e0b; /* Amber 500 - Attention/Warning/Secondary CTAs */
+  --accent: #2563eb; /* Blue 600 - Used for standard theme links */
   --success: #16a34a; /* Green 600 - Checkmarks */
   --muted: #f8fafc; /* Slate 50 */
   --border: #e2e8f0; /* Slate 200 */
@@ -45,9 +46,41 @@
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
   }
+  
+  /* Restored AstroPaper Interactive Elements */
+  a,
+  button {
+    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
-/* Custom Gradients for Hero */
+/* ==========================================
+   RESTORED ASTROPAPER THEME UTILITIES
+   (This fixes your Header, Footer, and Posts layout!)
+========================================== */
+@utility max-w-app {
+  @apply max-w-3xl;
+}
+
+@utility app-layout {
+  @apply mx-auto w-full max-w-app px-4;
+}
+
+.active-nav {
+  @apply underline decoration-wavy decoration-2 underline-offset-8;
+}
+
+:target {
+  scroll-margin-block: 1rem;
+}
+
+/* ==========================================
+   CUSTOM HOMEPAGE COMPONENTS
+========================================== */
 .hero-gradient {
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
 }

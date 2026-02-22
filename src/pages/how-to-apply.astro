@@ -1,0 +1,396 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Apply for a Free Government Tablet in 2026",
+  "description": "A complete, step-by-step guide to checking your eligibility, gathering your documents, and securing your free device and internet service without getting scammed.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Check Your Eligibility",
+      "text": "Determine if you qualify based on your household income (at or below 135% of the Federal Poverty Guidelines) or through participation in government assistance programs like SNAP, Medicaid, or SSI.",
+      "url": "https://freetablet.click/how-to-apply#step-1"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Gather Required Documents",
+      "text": "Collect official documents proving your identity, residential address, and your qualifying income or program participation. Digital scans or clear photos are accepted.",
+      "url": "https://freetablet.click/how-to-apply#step-2"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Apply via the National Verifier",
+      "text": "Submit your application securely through the official USAC National Verifier website to get federal approval for the Lifeline program.",
+      "url": "https://freetablet.click/how-to-apply#step-3"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Choose an Approved Provider",
+      "text": "Once approved, select an FCC-authorized wireless provider operating in your state to receive your device and service plan.",
+      "url": "https://freetablet.click/how-to-apply#step-4"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Receive & Activate Your Device",
+      "text": "Wait 7 to 14 days for your new smartphone or tablet to arrive by mail, then follow the provider's instructions to activate your service.",
+      "url": "https://freetablet.click/how-to-apply#step-5"
+    }
+  ]
+};
+---
+
+<Layout title="How to Apply for a Free Government Tablet | 2026 Step-by-Step Guide">
+  
+  <!-- Injecting HowTo Schema for Google Rich Snippets -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <Header />
+  
+  <main id="main-content" class="w-full flex-1 flex flex-col items-center">
+    
+    <!-- ==========================================
+         SECTION 1: PREMIUM HERO
+    =========================================== -->
+    <section class="relative w-full flex flex-col items-center justify-center overflow-hidden bg-[#0f172a] text-white pt-20 pb-24 lg:pt-28 lg:pb-32" style="background-image: radial-gradient(circle at top right, rgba(37, 99, 235, 0.2), transparent 45%), radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent 45%);">
+      <div class="relative z-10 mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+        
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-semibold text-blue-100 mb-6 shadow-sm">
+          <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+          <span>The Ultimate 2026 Guide</span>
+        </div>
+
+        <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl text-white mb-6">
+          How to Apply for a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-100">Free Government Tablet</span>
+        </h1>
+        
+        <p class="text-lg text-blue-100 sm:text-xl leading-relaxed font-medium max-w-3xl mx-auto mb-10">
+          A complete, step-by-step roadmap to verifying your eligibility, gathering the correct documents, and securing your free device and internet service without getting scammed.
+        </p>
+
+        <a href="#steps" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-all duration-300 transform hover:-translate-y-1 group">
+          Start Step 1
+          <svg class="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: THE 5-STEP PROCESS
+    =========================================== -->
+    <section id="steps" class="relative w-full py-16 lg:py-24 bg-muted/30 scroll-mt-10" style="content-visibility: auto;">
+      <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl mb-4">
+            The 5-Step Application Process
+          </h2>
+          <p class="text-lg text-foreground/75 leading-relaxed max-w-2xl mx-auto">
+            Follow this precise roadmap to ensure your application sails through the approval process without unnecessary delays or document rejections.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          
+          <!-- Step 1 -->
+          <div id="step-1" class="bg-white rounded-3xl p-8 sm:p-10 border border-border shadow-sm relative overflow-hidden flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow">
+            <div class="absolute -right-8 -top-12 text-[150px] font-black text-blue-50/50 leading-none select-none pointer-events-none">1</div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-100 text-primary-light flex items-center justify-center shrink-0 relative z-10">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-bold text-foreground mb-3">Check Your Eligibility</h3>
+              <p class="text-foreground/75 leading-relaxed font-medium mb-4">
+                Before applying anywhere, confirm that you actually qualify. The federal government requires you to meet one of two criteria:
+              </p>
+              <ul class="space-y-2 mb-4">
+                <li class="flex items-start gap-2 text-foreground/80">
+                  <svg class="w-5 h-5 text-success shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  <strong>Income-Based:</strong> Your household income is at or below 135% of the Federal Poverty Guidelines.
+                </li>
+                <li class="flex items-start gap-2 text-foreground/80">
+                  <svg class="w-5 h-5 text-success shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  <strong>Program-Based:</strong> You or someone in your household participates in SNAP (Food Stamps), Medicaid, SSI, Veterans Pension, or Federal Public Housing.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div id="step-2" class="bg-white rounded-3xl p-8 sm:p-10 border border-border shadow-sm relative overflow-hidden flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow">
+            <div class="absolute -right-8 -top-12 text-[150px] font-black text-blue-50/50 leading-none select-none pointer-events-none">2</div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-100 text-primary-light flex items-center justify-center shrink-0 relative z-10">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" /></svg>
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-bold text-foreground mb-3">Gather Required Documents</h3>
+              <p class="text-foreground/75 leading-relaxed font-medium">
+                To prevent your application from being rejected or delayed, you must have copies of official documents ready to upload. You will need proof of your identity (like a State ID or Passport), proof of your residential address (like a recent utility bill), and official proof of your qualifying program (like a recent SNAP benefits letter) or income (like a tax return). 
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div id="step-3" class="bg-white rounded-3xl p-8 sm:p-10 border border-border shadow-sm relative overflow-hidden flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow">
+            <div class="absolute -right-8 -top-12 text-[150px] font-black text-blue-50/50 leading-none select-none pointer-events-none">3</div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-100 text-primary-light flex items-center justify-center shrink-0 relative z-10">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            </div>
+            <div class="relative z-10 w-full">
+              <h3 class="text-2xl font-bold text-foreground mb-3">Apply via the National Verifier</h3>
+              <p class="text-foreground/75 leading-relaxed font-medium mb-6">
+                The absolute safest way to apply is directly through the government's centralized system. Do not give your Social Security Number to unverified, sketchy websites.
+              </p>
+              <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="font-bold text-primary">Official Portal:</span>
+                <a href="https://www.usac.org/lifeline/national-verifier/" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-bold hover:underline flex items-center">
+                  usac.org/lifeline/national-verifier
+                  <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div id="step-4" class="bg-white rounded-3xl p-8 sm:p-10 border border-border shadow-sm relative overflow-hidden flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow">
+            <div class="absolute -right-8 -top-12 text-[150px] font-black text-blue-50/50 leading-none select-none pointer-events-none">4</div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-100 text-primary-light flex items-center justify-center shrink-0 relative z-10">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+            </div>
+            <div class="relative z-10 w-full">
+              <h3 class="text-2xl font-bold text-foreground mb-3">Choose an Approved Provider</h3>
+              <p class="text-foreground/75 leading-relaxed font-medium mb-6">
+                Once the National Verifier approves your eligibility, it is time to choose the telecom company that will actually ship your device and provide your internet service. Compare some of our top-rated, authorized providers below to see who operates in your state:
+              </p>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <a href="/airtalk-wireless" class="text-center px-4 py-3 bg-muted/50 hover:bg-red-50 border border-border hover:border-red-200 rounded-lg text-sm font-bold text-foreground hover:text-red-600 transition-colors">AirTalk Wireless</a>
+                <a href="/assurance-wireless" class="text-center px-4 py-3 bg-muted/50 hover:bg-blue-50 border border-border hover:border-blue-200 rounded-lg text-sm font-bold text-foreground hover:text-blue-600 transition-colors">Assurance Wireless</a>
+                <a href="/safelink-wireless" class="text-center px-4 py-3 bg-muted/50 hover:bg-emerald-50 border border-border hover:border-emerald-200 rounded-lg text-sm font-bold text-foreground hover:text-emerald-600 transition-colors">SafeLink Wireless</a>
+                <a href="/standup-wireless" class="text-center px-4 py-3 bg-muted/50 hover:bg-orange-50 border border-border hover:border-orange-200 rounded-lg text-sm font-bold text-foreground hover:text-orange-600 transition-colors">StandUp Wireless</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div id="step-5" class="bg-white rounded-3xl p-8 sm:p-10 border border-border shadow-sm relative overflow-hidden flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow">
+            <div class="absolute -right-8 -top-12 text-[150px] font-black text-blue-50/50 leading-none select-none pointer-events-none">5</div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-100 text-primary-light flex items-center justify-center shrink-0 relative z-10">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>
+            </div>
+            <div class="relative z-10">
+              <h3 class="text-2xl font-bold text-foreground mb-3">Receive & Activate Your Device</h3>
+              <p class="text-foreground/75 leading-relaxed font-medium">
+                After you complete enrollment with your chosen provider, they will process your order. You can generally expect your new smartphone, tablet, or SIM card to arrive by mail within a <strong>7 to 14 business day shipping window</strong>. Follow the instructions included in the box to activate your service and enjoy your connectivity!
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: REQUIRED DOCUMENTS CHECKLIST
+    =========================================== -->
+    <section class="relative w-full py-16 lg:py-24 bg-white border-t border-border">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl mb-4">
+            Required Documents Checklist
+          </h2>
+          <p class="text-lg text-foreground/75 leading-relaxed">
+            Have these documents ready before you begin your application. Make sure the name on your documents matches your application exactly.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          
+          <div class="bg-muted/30 p-6 rounded-2xl border border-border">
+            <div class="flex items-center gap-3 mb-4 border-b border-border pb-3">
+              <svg class="w-5 h-5 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" /></svg>
+              <h3 class="font-bold text-foreground text-lg">Identity</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-foreground/80 font-medium">
+              <li>• U.S. Driver's License</li>
+              <li>• State ID Card</li>
+              <li>• U.S. Passport</li>
+              <li>• Tribal ID</li>
+            </ul>
+          </div>
+
+          <div class="bg-muted/30 p-6 rounded-2xl border border-border">
+            <div class="flex items-center gap-3 mb-4 border-b border-border pb-3">
+              <svg class="w-5 h-5 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+              <h3 class="font-bold text-foreground text-lg">Address</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-foreground/80 font-medium">
+              <li>• Recent Utility Bill</li>
+              <li>• Current Lease / Mortgage</li>
+              <li>• Mortgage Statement</li>
+              <li>• Most recent W-2 or Tax Return</li>
+            </ul>
+          </div>
+
+          <div class="bg-muted/30 p-6 rounded-2xl border border-border">
+            <div class="flex items-center gap-3 mb-4 border-b border-border pb-3">
+              <svg class="w-5 h-5 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <h3 class="font-bold text-foreground text-lg">Income</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-foreground/80 font-medium">
+              <li>• 3 Consecutive Pay Stubs</li>
+              <li>• Prior year's Tax Return</li>
+              <li>• Social Security Benefits Statement</li>
+              <li>• Veterans Administration Statement</li>
+            </ul>
+          </div>
+
+          <div class="bg-muted/30 p-6 rounded-2xl border border-border">
+            <div class="flex items-center gap-3 mb-4 border-b border-border pb-3">
+              <svg class="w-5 h-5 text-primary-light" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              <h3 class="font-bold text-foreground text-lg">Program</h3>
+            </div>
+            <ul class="space-y-2 text-sm text-foreground/80 font-medium">
+              <li>• SNAP Benefit Letter or EBT Card</li>
+              <li>• Official Medicaid Approval Letter</li>
+              <li>• SSI Award Letter</li>
+              <li>• Public Housing Assistance Letter</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 flex items-start gap-4 shadow-sm max-w-4xl mx-auto">
+          <svg class="w-6 h-6 text-primary-light shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <p class="text-blue-900 leading-relaxed font-medium text-sm">
+            <strong>Pro Tip:</strong> You only need to provide ONE document from each required category (e.g., you do not need income proof if you provide program proof like a SNAP letter). Digital scans or clear smartphone photos of these documents are perfectly acceptable to upload!
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: DO'S AND DON'TS (SCAM WARNING)
+    =========================================== -->
+    <section class="relative w-full py-16 lg:py-24 bg-slate-50 border-t border-border">
+      <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl mb-4">
+            Important Do's & Don'ts
+          </h2>
+          <p class="text-lg text-foreground/75 leading-relaxed">
+            Protect your personal information and keep your benefits active by following these critical safety rules.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- DO'S -->
+          <div class="bg-white rounded-2xl border-2 border-green-200 p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-green-800 mb-6 flex items-center gap-2">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Always Do This
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-foreground/85 font-medium">Apply only through official channels like the National Verifier.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-foreground/85 font-medium">Keep copies of the documents and confirmation numbers you submit.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-foreground/85 font-medium">Remember to recertify your Lifeline eligibility annually when prompted.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-foreground/85 font-medium">Use your service! You must make a call or use data at least once every 30 days to stay active.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- DON'TS -->
+          <div class="bg-white rounded-2xl border-2 border-red-200 p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-red-800 mb-6 flex items-center gap-2">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              Never Do This
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </div>
+                <span class="text-foreground/85 font-medium">Never pay an upfront fee for a "guaranteed" free tablet approval.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </div>
+                <span class="text-foreground/85 font-medium">Do not apply for multiple Lifeline benefits. The law strictly enforces one benefit per household.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </div>
+                <span class="text-foreground/85 font-medium">Never give your Social Security Number to unverified, third-party social media pages.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 mt-0.5 w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </div>
+                <span class="text-foreground/85 font-medium">Do not fall for sites still claiming the ACP (Affordable Connectivity Program) is fully funded and active.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: BOTTOM CTA
+    =========================================== -->
+    <section class="relative w-full py-20 lg:py-24 bg-[#0f172a] text-white overflow-hidden">
+      <!-- Minimal background glow -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" style="background-image: radial-gradient(circle at center, rgba(37, 99, 235, 0.2), transparent 50%);"></div>
+
+      <div class="relative z-10 mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6 text-white">
+          Ready to get started?
+        </h2>
+        <p class="text-lg text-blue-100 leading-relaxed mb-10 font-medium">
+          Head straight to the official USAC National Verifier to submit your application securely, or explore providers available specifically in your state.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+          <a href="https://www.usac.org/lifeline/national-verifier/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto group">
+            Go to National Verifier
+            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+          </a>
+          <a href="/states" class="inline-flex items-center justify-center rounded-lg border-2 border-white/20 bg-white/5 px-8 py-4 text-lg font-bold text-white hover:bg-white/10 transition-all duration-300 w-full sm:w-auto">
+            View State Directory
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

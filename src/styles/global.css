@@ -1,70 +1,59 @@
 @import "tailwindcss";
-@import "./typography.css";
+
+/* Import Premium Modern Font (Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-:root,
-html[data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
-  --muted: #e6e6e6;
-  --border: #ece9e9;
-}
-
-html[data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #343f60;
-  --border: #ab4b08;
+:root {
+  /* Premium USA Business Palette */
+  --background: #ffffff;
+  --foreground: #0f172a; /* Slate 900 */
+  --primary: #1e3a8a; /* Blue 900 - Trust/Authority */
+  --primary-light: #2563eb; /* Blue 600 - CTAs */
+  --accent: #f59e0b; /* Amber 500 - Attention/Warning/Secondary CTAs */
+  --success: #16a34a; /* Green 600 - Checkmarks */
+  --muted: #f8fafc; /* Slate 50 */
+  --border: #e2e8f0; /* Slate 200 */
 }
 
 @theme inline {
-  --font-app: var(--font-google-sans-code);
+  --font-app: 'Inter', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
+  --color-success: var(--success);
   --color-muted: var(--muted);
   --color-border: var(--border);
 }
 
 @layer base {
   * {
-    @apply border-border outline-accent/75;
-    scrollbar-width: auto;
-    scrollbar-color: var(--color-muted) transparent;
+    @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
   }
   html {
-    @apply overflow-y-scroll scroll-smooth;
+    @apply overflow-y-scroll scroll-smooth antialiased;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-primary-light/30 selection:text-primary;
   }
-  a,
-  button {
-    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
-  }
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
+  /* Smooth Text Rendering */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
   }
 }
 
-@utility max-w-app {
-  @apply max-w-3xl;
+/* Custom Gradients for Hero */
+.hero-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
 }
-
-@utility app-layout {
-  @apply mx-auto w-full max-w-app px-4;
-}
-
-.active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-8;
-}
-
-/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 1rem;
+.glass-panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }

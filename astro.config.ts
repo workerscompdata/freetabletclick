@@ -33,6 +33,8 @@ export default defineConfig({
         // Exclude archives + tags (including nested)
         if (p === "/archives" || p.startsWith("/archives/")) return false;
         if (p === "/tags" || p.startsWith("/tags/")) return false;
+        if (p === "/search" || p.startsWith("/search/")) return false;
+
 
         return true;
       },

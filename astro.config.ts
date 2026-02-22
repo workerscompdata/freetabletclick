@@ -16,7 +16,15 @@ export default defineConfig({
   site: SITE.website,
   integrations: [
     sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+      filter: (page) => {
+        const p = page.endsWith("/") ? page.slice(0, -1) : page;
+
+        // Exclude archives + tags (including nested pages)
+        if (p === "/archives" || p.startsWith("/archives/")) return false;
+        if (p === "/tags" || p.startsWith("/tags/")) return false;
+
+        return true;
+      },
     }),
   ],
   markdown: {

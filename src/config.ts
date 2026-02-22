@@ -1,10 +1,10 @@
 export const SITE = {
   website: "https://freetablet.click/", // replace this with your deployed domain
-  author: "Sat Naing",
-  profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
-  ogImage: "astropaper-og.jpg",
+  author: "Free Tablet Click",
+  profile: "https://freetablet.click/",
+  desc: "Get your free government tablet and internet today. Complete 2026 guide for Lifeline, EBT, seniors, and students to access affordable connectivity.",
+  title: "Free Government Tablet & Internet Guide 2026",
+  ogImage: "freetablet-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
@@ -15,7 +15,7 @@ export const SITE = {
 
   showBackButton: true, // show back button in post detail
   editPost: {
-    enabled: true,
+    enabled: false, // Turned off so public users don't see a GitHub edit link
     text: "Edit page",
     url: "https://github.com/satnaing/astro-paper/edit/main/",
   },

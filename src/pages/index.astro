@@ -1379,7 +1379,7 @@ import Footer from "@/components/Footer.astro";
       });
     </script>
 
-    <!-- ==========================================
+   <!-- ==========================================
          SECTION 11: FINAL CTA & E-E-A-T TRUST BLOCK
     =========================================== -->
     <section id="final-cta" class="relative w-full py-20 lg:py-28 bg-[#0f172a] text-white border-t border-border overflow-hidden">
@@ -1469,45 +1469,43 @@ import Footer from "@/components/Footer.astro";
 </Layout>
 
 <!-- FAQ Search Logic (Non-blocking, Ultra-fast) -->
-<script>
+<script is:inline>
   document.addEventListener('astro:page-load', () => {
-    const searchInput = document.getElementById('faq-search') as HTMLInputElement | null;
+    const searchInput = document.getElementById('faq-search');
     if (!searchInput) return;
 
     searchInput.addEventListener('input', (e) => {
-      const target = e.target as HTMLInputElement;
+      const target = e.target;
       if (!target) return;
       
       const term = target.value.toLowerCase();
       const items = document.querySelectorAll('.faq-item');
       
       items.forEach((item) => {
-        const el = item as HTMLElement;
-        const text = el.textContent?.toLowerCase() || '';
+        const text = item.textContent ? item.textContent.toLowerCase() : '';
         if (text.includes(term)) {
-          el.style.display = 'block';
+          item.style.display = 'block';
         } else {
-          el.style.display = 'none';
+          item.style.display = 'none';
         }
       });
     });
   });
 </script>
 
-<!-- Eligibility Checker Logic - TS Typed -->
-<script>
+<!-- Eligibility Checker Logic -->
+<script is:inline>
   const initChecker = () => {
     const verifyBtn = document.getElementById("verify-btn");
     const programCbs = document.querySelectorAll(".program-cb");
-    const householdSizeInput = document.getElementById("household-size") as HTMLSelectElement | null;
-    const incomeInput = document.getElementById("annual-income") as HTMLInputElement | null;
+    const householdSizeInput = document.getElementById("household-size");
+    const incomeInput = document.getElementById("annual-income");
     const resultBox = document.getElementById("result-box");
     const resultIcon = document.getElementById("result-icon");
     const resultTitle = document.getElementById("result-title");
     const resultMessage = document.getElementById("result-message");
     const resultAction = document.getElementById("result-action");
 
-    // TypeScript strict check: ensure elements exist
     if(!verifyBtn || !householdSizeInput || !incomeInput || !resultBox || !resultIcon || !resultTitle || !resultMessage || !resultAction) return; 
 
     const baseIncomeLimit = 21128;
@@ -1517,8 +1515,7 @@ import Footer from "@/components/Footer.astro";
       let isEligible = false;
       let reason = "";
 
-      // Add HTMLInputElement type assertion for .checked property
-      const isProgramChecked = Array.from(programCbs).some(cb => (cb as HTMLInputElement).checked);
+      const isProgramChecked = Array.from(programCbs).some(cb => cb.checked);
       
       if (isProgramChecked) {
         isEligible = true;

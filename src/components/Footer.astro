@@ -1,8 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-// Back To Top Icons
-import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
-import IconArrowNarrowUp from "@/assets/icons/IconArrowNarrowUp.svg";
+import Socials from "./Socials.astro";
 
 const currentYear = new Date().getFullYear();
 
@@ -21,12 +19,17 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
   ]}
   {...attrs}
 >
+  <!-- Subtle Background Glow to match Hero sections -->
   <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" style="background-image: radial-gradient(circle at bottom center, rgba(37, 99, 235, 0.1), transparent 60%);"></div>
 
   <div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 lg:pt-20">
     
+    <!-- ==========================================
+         MAIN FOOTER GRID (4 COLUMNS)
+    =========================================== -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
       
+      <!-- Column 1: Brand & About -->
       <div class="flex flex-col gap-4 lg:pr-4">
         <a href="/" class="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded-lg w-fit">
           <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-600 text-white shadow-md group-hover:scale-105 transition-transform duration-300">
@@ -45,6 +48,7 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
         </a>
       </div>
 
+      <!-- Column 2: Quick Links -->
       <div class="flex flex-col gap-4">
         <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-2">Quick Links</h3>
         <ul class="space-y-3">
@@ -55,6 +59,7 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
         </ul>
       </div>
 
+      <!-- Column 3: Legal & Support -->
       <div class="flex flex-col gap-4">
         <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-2">Legal & Support</h3>
         <ul class="space-y-3">
@@ -65,6 +70,7 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
         </ul>
       </div>
 
+      <!-- Column 4: Official Resources (Outbound Trust Links) -->
       <div class="flex flex-col gap-4">
         <h3 class="text-white font-bold uppercase tracking-wider text-sm mb-2">Official Resources</h3>
         <ul class="space-y-3">
@@ -91,112 +97,27 @@ const { noMarginTop = false, class: className, ...attrs } = Astro.props;
 
     </div>
 
+    <!-- ==========================================
+         E-E-A-T DISCLAIMER BLOCK
+    =========================================== -->
     <div class="border-t border-slate-800/80 pt-8 pb-8 text-center md:text-left">
       <p class="text-[11px] sm:text-xs text-slate-500 leading-relaxed font-medium max-w-6xl mx-auto">
         <strong>Disclaimer:</strong> FreeTablet.click is an independent educational and informational website. We are <strong>NOT</strong> affiliated with, endorsed by, or sponsored by the Federal Communications Commission (FCC), the Universal Service Administrative Company (USAC), or any U.S. federal or state government agency. We do not distribute tablets, phones, or process Lifeline applications directly. All program names, provider brands, and trademarks belong to their respective owners. Information on this site is subject to change based on federal funding and provider inventory.
       </p>
     </div>
 
-    <div class="border-t border-slate-800 py-6 flex flex-col items-center justify-center gap-4">
-      <div class="flex items-center justify-center">
-        <Socials />
-      </div>
-      <div class="text-sm text-slate-400 font-medium text-center">
+    <!-- ==========================================
+         BOTTOM BAR (COPYRIGHT & SOCIALS)
+    =========================================== -->
+    <div class="border-t border-slate-800 py-6 flex flex-col-reverse md:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-slate-400 font-medium text-center md:text-left">
         <span>Copyright &#169; {currentYear} FreeTablet.click.</span>
         <span class="hidden sm:inline">&nbsp;|&nbsp;</span>
         <span class="block sm:inline mt-1 sm:mt-0">All rights reserved.</span>
       </div>
+      
+      <!-- Reuse the existing AstroPaper Socials Component -->
     </div>
 
   </div>
-
-  <div
-    id="btt-btn-container"
-    class:list={[
-      "fixed end-4 bottom-8 z-50",
-      "md:sticky md:end-auto md:float-end md:me-1",
-      "translate-y-14 opacity-0 transition duration-500",
-    ]}
-  >
-    <button
-      data-button="back-to-top"
-      class:list={[
-        "group relative bg-slate-800 px-2 py-1 text-white border border-slate-700",
-        "size-14 rounded-full shadow-xl hover:bg-slate-700 hover:border-blue-500 transition-colors",
-        "md:h-10 md:w-fit md:rounded-md md:shadow-none md:focus-visible:rounded-none",
-      ]}
-    >
-      <span
-        id="progress-indicator"
-        class="absolute inset-0 -z-10 block size-14 scale-110 rounded-full bg-transparent md:hidden md:h-10 md:rounded-md"
-      ></span>
-      <IconChevronLeft class="inline-block rotate-90 md:hidden" />
-      <span class="sr-only text-sm group-hover:text-blue-400 md:not-sr-only md:px-2 md:font-semibold tracking-wide">
-        <IconArrowNarrowUp class="inline-block size-4 mr-1" />
-        Back To Top
-      </span>
-    </button>
-  </div>
 </footer>
-
-<script is:inline data-astro-rerun>
-  /** Scrolls the document to the top when
-   * the "Back to Top" button is clicked. */
-  function backToTop() {
-    const rootElement = document.documentElement;
-    const btnContainer = document.querySelector("#btt-btn-container");
-    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
-    const progressIndicator = document.querySelector("#progress-indicator");
-
-    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
-      return;
-
-    // Attach click event handler for back-to-top button
-    backToTopBtn.addEventListener("click", () => {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    });
-
-    // Handle button visibility according to scroll position
-    let lastVisible = null;
-    function handleScroll() {
-      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-      const scrollTop = rootElement.scrollTop;
-      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
-
-      progressIndicator.style.setProperty(
-        "background-image",
-        `conic-gradient(#3b82f6, #3b82f6 ${scrollPercent}%, transparent ${scrollPercent}%)`
-      );
-
-      const isVisible = scrollTop / scrollTotal > 0.3;
-
-      if (isVisible !== lastVisible) {
-        btnContainer.classList.toggle("opacity-100", isVisible);
-        btnContainer.classList.toggle("translate-y-0", isVisible);
-        btnContainer.classList.toggle("opacity-0", !isVisible);
-        btnContainer.classList.toggle("translate-y-14", !isVisible);
-        lastVisible = isVisible;
-      }
-    }
-
-    let ticking = false;
-    document.addEventListener("scroll", () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-  }
-  
-  // Initialize on full page load and Astro view transitions
-  document.addEventListener('astro:page-load', backToTop);
-  if (document.readyState === 'complete') {
-    backToTop();
-  } else {
-    document.addEventListener('DOMContentLoaded', backToTop);
-  }
-</script>

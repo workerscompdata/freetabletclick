@@ -13,13 +13,24 @@ import { SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE.website,
+  // Force correct canonical base for sitemap
+  site: "https://freetabletclick.pages.dev",
+
   integrations: [
     sitemap({
       filter: (page) => {
-        const p = page.endsWith("/") ? page.slice(0, -1) : page;
+        // page can be full URL or just a path, handle both
+        const pathname = (() => {
+          try {
+            return new URL(page).pathname;
+          } catch {
+            return page;
+          }
+        })();
 
-        // Exclude archives + tags (including nested pages)
+        const p = pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+
+        // Exclude archives + tags (including nested)
         if (p === "/archives" || p.startsWith("/archives/")) return false;
         if (p === "/tags" || p.startsWith("/tags/")) return false;
 
@@ -27,6 +38,7 @@ export default defineConfig({
       },
     }),
   ],
+
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
     shikiConfig: {
@@ -42,6 +54,7 @@ export default defineConfig({
       ],
     },
   },
+
   vite: {
     // eslint-disable-next-line
     // @ts-ignore
@@ -52,10 +65,12 @@ export default defineConfig({
       exclude: ["@resvg/resvg-js"],
     },
   },
+
   image: {
     responsiveStyles: true,
     layout: "constrained",
   },
+
   env: {
     schema: {
       PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
@@ -65,6 +80,7 @@ export default defineConfig({
       }),
     },
   },
+
   experimental: {
     preserveScriptOrder: true,
     fonts: [

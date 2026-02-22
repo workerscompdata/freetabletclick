@@ -1357,18 +1357,20 @@ import Footer from "@/components/Footer.astro";
       </div>
     </section>
 
-    <!-- FAQ Search Logic (Non-blocking, Ultra-fast) -->
-    <script>
+   <!-- FAQ Search Logic (Non-blocking, Ultra-fast) -->
+    <script is:inline defer>
       document.addEventListener('astro:page-load', () => {
         const searchInput = document.getElementById('faq-search');
         if (!searchInput) return;
 
         searchInput.addEventListener('input', (e) => {
+          if (!e.target) return;
+          
           const term = e.target.value.toLowerCase();
           const items = document.querySelectorAll('.faq-item');
           
-          items.forEach(item => {
-            const text = item.textContent.toLowerCase();
+          items.forEach((item) => {
+            const text = item.textContent ? item.textContent.toLowerCase() : '';
             if (text.includes(term)) {
               item.style.display = 'block';
             } else {
@@ -1379,7 +1381,7 @@ import Footer from "@/components/Footer.astro";
       });
     </script>
 
-   <!-- ==========================================
+    <!-- ==========================================
          SECTION 11: FINAL CTA & E-E-A-T TRUST BLOCK
     =========================================== -->
     <section id="final-cta" class="relative w-full py-20 lg:py-28 bg-[#0f172a] text-white border-t border-border overflow-hidden">
@@ -1468,33 +1470,8 @@ import Footer from "@/components/Footer.astro";
   <Footer />
 </Layout>
 
-<!-- FAQ Search Logic (Non-blocking, Ultra-fast) -->
-<script is:inline>
-  document.addEventListener('astro:page-load', () => {
-    const searchInput = document.getElementById('faq-search');
-    if (!searchInput) return;
-
-    searchInput.addEventListener('input', (e) => {
-      const target = e.target;
-      if (!target) return;
-      
-      const term = target.value.toLowerCase();
-      const items = document.querySelectorAll('.faq-item');
-      
-      items.forEach((item) => {
-        const text = item.textContent ? item.textContent.toLowerCase() : '';
-        if (text.includes(term)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
-
 <!-- Eligibility Checker Logic -->
-<script is:inline>
+<script is:inline defer>
   const initChecker = () => {
     const verifyBtn = document.getElementById("verify-btn");
     const programCbs = document.querySelectorAll(".program-cb");

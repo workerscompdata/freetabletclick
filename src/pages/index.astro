@@ -1357,28 +1357,7 @@ import Footer from "@/components/Footer.astro";
       </div>
     </section>
 
-    <!-- FAQ Search Logic (Non-blocking, Ultra-fast) -->
-    <script>
-      document.addEventListener('astro:page-load', () => {
-        const searchInput = document.getElementById('faq-search');
-        if (!searchInput) return;
-
-        searchInput.addEventListener('input', (e) => {
-          const term = e.target.value.toLowerCase();
-          const items = document.querySelectorAll('.faq-item');
-          
-          items.forEach(item => {
-            const text = item.textContent.toLowerCase();
-            if (text.includes(term)) {
-              item.style.display = 'block';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      });
-    </script>
-
+   
         <!-- ==========================================
          SECTION 11: FINAL CTA & E-E-A-T TRUST BLOCK
     =========================================== -->

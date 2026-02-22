@@ -1,0 +1,441 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "name": "Demographics Qualifying for Free Government Tablets",
+      "description": "A list of demographic groups that frequently qualify for federal connectivity assistance.",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Low-Income Households (≤ 135% FPG)" },
+        { "@type": "ListItem", "position": 2, "name": "Senior Citizens (65+)" },
+        { "@type": "ListItem", "position": 3, "name": "Students & College Families" },
+        { "@type": "ListItem", "position": 4, "name": "Veterans & Military Families" },
+        { "@type": "ListItem", "position": 5, "name": "Families with Children" },
+        { "@type": "ListItem", "position": 6, "name": "Housing Assistance Recipients" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can more than one person in my house get a free tablet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The federal Lifeline program strictly enforces a 'one per household' rule. A household is defined as any individual or group of individuals who live together at the same address and share income and expenses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I am experiencing homelessness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Individuals experiencing homelessness can still qualify. You can use a temporary address, the address of a shelter, or a descriptive location of where you reside. You will not be denied based on lack of a permanent address."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout title="Who Qualifies for Free Government Tablets? | 2026 Eligibility Guide">
+  
+  <!-- Injecting SEO Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <Header />
+  
+  <main id="main-content" class="w-full flex-1 flex flex-col items-center">
+    
+    <!-- ==========================================
+         SECTION 1: PREMIUM HERO
+    =========================================== -->
+    <section class="relative w-full flex flex-col items-center justify-center overflow-hidden bg-[#0f172a] text-white pt-20 pb-24 lg:pt-28 lg:pb-32" style="background-image: radial-gradient(circle at top right, rgba(37, 99, 235, 0.2), transparent 45%), radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent 45%);">
+      <div class="relative z-10 mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+        
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-semibold text-blue-100 mb-6 shadow-sm">
+          <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <span>Complete 2026 Guidelines</span>
+        </div>
+
+        <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl text-white mb-6">
+          Who Qualifies for Free <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-100">Government Tablets?</span>
+        </h1>
+        
+        <p class="text-lg text-blue-100 sm:text-xl leading-relaxed font-medium max-w-3xl mx-auto mb-10">
+          Detailed eligibility criteria for different demographics including income guidelines, qualifying programs, and specific requirements for seniors, students, veterans, and families.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+          <a href="/how-to-apply" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto group">
+            Apply Now
+            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+          </a>
+          <a href="/eligibility" class="inline-flex items-center justify-center rounded-lg border border-white/30 bg-white/5 backdrop-blur-sm px-8 py-4 text-lg font-bold text-white hover:bg-white/10 transition-all duration-300 w-full sm:w-auto">
+            General Eligibility
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STICKY PAGE NAVIGATION -->
+    <nav class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md border-b border-border shadow-sm hidden md:block">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <ul class="flex items-center justify-center space-x-8 py-4 text-sm font-bold text-foreground/75">
+          <li><a href="#quick-summary" class="hover:text-primary-light transition-colors">Quick Summary</a></li>
+          <li><a href="#demographics" class="hover:text-primary-light transition-colors">Demographics</a></li>
+          <li><a href="#programs" class="hover:text-primary-light transition-colors">Qualifying Programs</a></li>
+          <li><a href="#special-circumstances" class="hover:text-primary-light transition-colors">Special Circumstances</a></li>
+          <li><a href="#important-notes" class="hover:text-primary-light transition-colors">Household Rules</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ==========================================
+         SECTION 2: QUICK SUMMARY (5 CARDS)
+    =========================================== -->
+    <section id="quick-summary" class="relative w-full py-16 bg-muted/30 scroll-mt-20">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          
+          <div class="bg-white p-5 rounded-xl border border-border shadow-sm flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <h3 class="text-sm font-bold text-foreground mb-1">Income Limit</h3>
+            <p class="text-xs text-foreground/70 font-medium">≤ 135% of Federal Poverty Guidelines</p>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-border shadow-sm flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            </div>
+            <h3 class="text-sm font-bold text-foreground mb-1">Programs</h3>
+            <p class="text-xs text-foreground/70 font-medium">SNAP, Medicaid, SSI, Housing, Veterans</p>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-border shadow-sm flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            </div>
+            <h3 class="text-sm font-bold text-foreground mb-1">Household Rule</h3>
+            <p class="text-xs text-foreground/70 font-medium">Strictly one benefit per household</p>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-border shadow-sm flex flex-col items-center text-center">
+            <div class="w-10 h-10 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+            </div>
+            <h3 class="text-sm font-bold text-foreground mb-1">Recertification</h3>
+            <p class="text-xs text-foreground/70 font-medium">Required to be renewed annually</p>
+          </div>
+
+          <div class="bg-white p-5 rounded-xl border border-border shadow-sm flex flex-col items-center text-center sm:col-span-2 lg:col-span-1">
+            <div class="w-10 h-10 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center mb-3">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            </div>
+            <h3 class="text-sm font-bold text-foreground mb-1">Special Cases</h3>
+            <p class="text-xs text-foreground/70 font-medium">Homeless, DV Survivors supported</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: ELIGIBILITY BY DEMOGRAPHICS
+    =========================================== -->
+    <section id="demographics" class="relative w-full py-16 lg:py-24 bg-white border-t border-border scroll-mt-20">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl mb-4">
+            Eligibility by Demographics
+          </h2>
+          <p class="text-lg text-foreground/75 leading-relaxed">
+            The federal government understands that connectivity is essential for all walks of life. Here is how specific groups commonly qualify for free or heavily discounted devices.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Card 1: Low-Income -->
+          <div class="bg-white rounded-3xl p-8 border-2 border-green-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-full blur-2xl -mr-10 -mt-10"></div>
+            <div class="flex items-center gap-4 mb-5 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center shrink-0">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-foreground">Low-Income Households</h3>
+            </div>
+            <p class="text-foreground/80 leading-relaxed font-medium relative z-10">
+              You do not need to be on a government program to qualify. If your total household income is at or below <strong>135% of the Federal Poverty Guidelines (FPG)</strong>, you are eligible. This requires proof, such as three consecutive pay stubs or your most recent state/federal tax return.
+            </p>
+          </div>
+
+          <!-- Card 2: Seniors -->
+          <div class="bg-white rounded-3xl p-8 border-2 border-purple-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-purple-50 rounded-full blur-2xl -mr-10 -mt-10"></div>
+            <div class="flex items-center gap-4 mb-5 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center shrink-0">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-foreground">Senior Citizens (65+)</h3>
+            </div>
+            <p class="text-foreground/80 leading-relaxed font-medium relative z-10">
+              Many seniors qualify effortlessly. While standard Social Security or Medicare alone does <em>not</em> automatically grant eligibility, participating in <strong>Supplemental Security Income (SSI)</strong> or <strong>Medicaid</strong> provides immediate, automatic approval for a connected device.
+            </p>
+          </div>
+
+          <!-- Card 3: Students -->
+          <div class="bg-white rounded-3xl p-8 border-2 border-blue-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full blur-2xl -mr-10 -mt-10"></div>
+            <div class="flex items-center gap-4 mb-5 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7" /></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-foreground">Students & College Families</h3>
+            </div>
+            <p class="text-foreground/80 leading-relaxed font-medium relative z-10">
+              Students require robust connectivity. If a child in your household participates in the <strong>Free and Reduced-Price School Lunch Program</strong> (or School Breakfast Program), or if a college student receives a <strong>Federal Pell Grant</strong> in the current award year, the entire household qualifies.
+            </p>
+          </div>
+
+          <!-- Card 4: Veterans -->
+          <div class="bg-white rounded-3xl p-8 border-2 border-red-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full blur-2xl -mr-10 -mt-10"></div>
+            <div class="flex items-center gap-4 mb-5 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center shrink-0">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-foreground">Veterans & Military</h3>
+            </div>
+            <p class="text-foreground/80 leading-relaxed font-medium relative z-10">
+              We honor those who served. Veterans actively receiving the <strong>Veterans Pension or Survivors Benefit</strong> automatically qualify for Lifeline assistance. Furthermore, the VA offers specific Digital Divide Consults to help veterans secure connected telehealth devices.
+            </p>
+          </div>
+
+          <!-- Card 5: Families -->
+          <div class="bg-white rounded-3xl p-8 border-2 border-orange-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-full blur-2xl -mr-10 -mt-10"></div>
+            <div class="flex items-center gap-4 mb-5 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-foreground">Families with Children</h3>
+            </div>
+            <p class="text-foreground/80 leading-relaxed font-medium relative z-10">
+              Families often qualify through multiple avenues. If anyone in your household—including children or dependents—receives <strong>SNAP (Food Stamps), WIC, Medicaid, or TANF</strong>, your entire household becomes eligible for a single device and data plan.
+            </p>
+          </div>
+
+          <!-- Card 6: Housing -->
+          <div class="bg-white rounded-3xl p-8 border-2 border-teal-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-teal-50 rounded-full blur-2xl -mr-10 -mt-10"></div>
+            <div class="flex items-center gap-4 mb-5 relative z-10">
+              <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-600 flex items-center justify-center shrink-0">
+                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+              </div>
+              <h3 class="text-2xl font-bold text-foreground">Housing Assistance Recipients</h3>
+            </div>
+            <p class="text-foreground/80 leading-relaxed font-medium relative z-10">
+              Federal housing support grants instant eligibility. If you receive <strong>Federal Public Housing Assistance (FPHA)</strong>, including Section 8 housing choice vouchers, you qualify. Programs like HUD ConnectHomeUSA also offer localized tech support.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: QUALIFYING PROGRAMS
+    =========================================== -->
+    <section id="programs" class="relative w-full py-16 lg:py-24 bg-muted/30 border-t border-border scroll-mt-20">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl mb-4">
+            Qualifying Government Programs
+          </h2>
+          <p class="text-lg text-foreground/75 leading-relaxed">
+            Participation in any of the following federal or state-managed assistance programs provides automatic qualification for the Lifeline benefit.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          
+          <div class="bg-white rounded-2xl p-6 border border-border shadow-sm">
+            <h3 class="text-lg font-bold text-primary mb-4 pb-3 border-b border-border">Nutrition Assistance</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-primary-light shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                SNAP (Supplemental Nutrition Assistance Program)
+              </li>
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-primary-light shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                WIC (Women, Infants, and Children)
+              </li>
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-primary-light shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Free and Reduced-Price School Lunch
+              </li>
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-primary-light shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                School Breakfast Program
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-border shadow-sm">
+            <h3 class="text-lg font-bold text-success mb-4 pb-3 border-b border-border">Healthcare Programs</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-success shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Medicaid
+              </li>
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-success shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Veterans Affairs (VA) Health Care
+              </li>
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-success shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                State Children's Health Insurance Program (CHIP) - *State dependent
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-border shadow-sm">
+            <h3 class="text-lg font-bold text-accent mb-4 pb-3 border-b border-border">Income & General Support</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                SSI (Supplemental Security Income)
+              </li>
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Veterans Pension and Survivors Benefit
+              </li>
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Federal Public Housing Assistance (Section 8)
+              </li>
+              <li class="flex items-start gap-2 text-foreground/80 font-medium text-sm">
+                <svg class="w-5 h-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                Tribal TANF / Head Start (Tribal Lands)
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: SPECIAL CIRCUMSTANCES
+    =========================================== -->
+    <section id="special-circumstances" class="relative w-full py-16 lg:py-24 bg-white border-t border-border scroll-mt-20">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl mb-4">
+            Special Circumstances
+          </h2>
+          <p class="text-lg text-foreground/75 leading-relaxed">
+            The system is designed to help those in crisis. If you lack standard documentation due to extreme circumstances, alternative pathways exist.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          
+          <div class="bg-muted/30 p-8 rounded-2xl border border-border shadow-sm text-center">
+            <h3 class="text-xl font-bold text-foreground mb-3">Homeless Individuals</h3>
+            <p class="text-foreground/75 leading-relaxed text-sm font-medium">
+              You are not required to have a permanent residence. You can use a temporary address, a shelter's address, or provide a descriptive physical location of where you reside during the application process.
+            </p>
+          </div>
+
+          <div class="bg-muted/30 p-8 rounded-2xl border border-border shadow-sm text-center">
+            <h3 class="text-xl font-bold text-foreground mb-3">Domestic Violence Survivors</h3>
+            <p class="text-foreground/75 leading-relaxed text-sm font-medium">
+              Survivors can request an independent economic household status to ensure they are not restricted by an abuser's existing Lifeline benefit. Confidentiality protocols are in place to protect your address.
+            </p>
+          </div>
+
+          <div class="bg-muted/30 p-8 rounded-2xl border border-border shadow-sm text-center">
+            <h3 class="text-xl font-bold text-foreground mb-3">Disaster Victims</h3>
+            <p class="text-foreground/75 leading-relaxed text-sm font-medium">
+              During federally declared natural disasters, the FCC frequently waives strict documentation rules temporarily to ensure displaced victims can quickly secure a connected device to reach family and FEMA.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: IMPORTANT NOTES (ALERT BOX)
+    =========================================== -->
+    <section id="important-notes" class="relative w-full pb-16 lg:pb-24 bg-white scroll-mt-20">
+      <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-yellow-50 border border-yellow-200 rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col md:flex-row gap-8 items-start">
+          <div class="flex-shrink-0 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+            <svg class="w-8 h-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+          </div>
+          <div>
+            <h2 class="text-2xl font-extrabold text-yellow-900 mb-4">Critical Eligibility Rules to Remember</h2>
+            <div class="space-y-4 text-yellow-900/80 font-medium leading-relaxed">
+              <p>
+                <strong>The "One Per Household" Rule:</strong> Federal law strictly dictates that only one Lifeline benefit is permitted per household. A "household" is defined as any individual or group living together at the same address who share income and expenses. If you live with roommates or in a nursing home where expenses are not shared, you must fill out an independent Household Worksheet to qualify.
+              </p>
+              <p>
+                <strong>Annual Recertification:</strong> Eligibility is not permanent. Every year, you will be required to recertify that you still meet the income or program participation requirements. Failure to recertify will result in your device's service being disconnected.
+              </p>
+              <p>
+                <strong>Usage Requirements:</strong> To keep your free data and talk service active, you must use your device (make a call, send a text, or use mobile data) at least once every 30 days.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: BOTTOM CTA
+    =========================================== -->
+    <section class="relative w-full py-20 lg:py-24 bg-[#0f172a] text-white overflow-hidden">
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" style="background-image: radial-gradient(circle at center, rgba(37, 99, 235, 0.2), transparent 50%);"></div>
+
+      <div class="relative z-10 mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-6 text-white">
+          Ready to Apply?
+        </h2>
+        <p class="text-lg text-blue-100 leading-relaxed mb-10 font-medium">
+          Now that you understand the qualifications, take the next step. View the required documents list or jump straight into the application guide.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+          <a href="/how-to-apply" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto group">
+            Go to Application Guide
+            <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+          </a>
+          <a href="/eligibility/proof-needed" class="inline-flex items-center justify-center rounded-lg border-2 border-white/20 bg-white/5 px-8 py-4 text-lg font-bold text-white hover:bg-white/10 transition-all duration-300 w-full sm:w-auto">
+            View Proof Required
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  <Footer />
+</Layout>

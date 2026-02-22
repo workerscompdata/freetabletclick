@@ -1080,7 +1080,7 @@ import Footer from "@/components/Footer.astro";
       </div>
     </section>
 
-      <!-- ==========================================
+       <!-- ==========================================
          SECTION 10: MASTER FAQ SECTION
     =========================================== -->
     <section id="faq" class="relative w-full py-20 lg:py-28 bg-muted/30 border-t border-border" style="content-visibility: auto;">
@@ -1468,21 +1468,47 @@ import Footer from "@/components/Footer.astro";
   <Footer />
 </Layout>
 
-<!-- Eligibility Checker Logic - Changed to standard script to prevent Astro render blocking & reflows -->
+<!-- FAQ Search Logic (Non-blocking, Ultra-fast) -->
 <script>
-  // Use requestAnimationFrame to prevent forced synchronous layout/reflow on load
+  document.addEventListener('astro:page-load', () => {
+    const searchInput = document.getElementById('faq-search') as HTMLInputElement | null;
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+      const target = e.target as HTMLInputElement;
+      if (!target) return;
+      
+      const term = target.value.toLowerCase();
+      const items = document.querySelectorAll('.faq-item');
+      
+      items.forEach((item) => {
+        const el = item as HTMLElement;
+        const text = el.textContent?.toLowerCase() || '';
+        if (text.includes(term)) {
+          el.style.display = 'block';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Eligibility Checker Logic - TS Typed -->
+<script>
   const initChecker = () => {
     const verifyBtn = document.getElementById("verify-btn");
     const programCbs = document.querySelectorAll(".program-cb");
-    const householdSizeInput = document.getElementById("household-size");
-    const incomeInput = document.getElementById("annual-income");
+    const householdSizeInput = document.getElementById("household-size") as HTMLSelectElement | null;
+    const incomeInput = document.getElementById("annual-income") as HTMLInputElement | null;
     const resultBox = document.getElementById("result-box");
     const resultIcon = document.getElementById("result-icon");
     const resultTitle = document.getElementById("result-title");
     const resultMessage = document.getElementById("result-message");
     const resultAction = document.getElementById("result-action");
 
-    if(!verifyBtn) return; 
+    // TypeScript strict check: ensure elements exist
+    if(!verifyBtn || !householdSizeInput || !incomeInput || !resultBox || !resultIcon || !resultTitle || !resultMessage || !resultAction) return; 
 
     const baseIncomeLimit = 21128;
     const additionalPersonLimit = 7425;
@@ -1491,7 +1517,8 @@ import Footer from "@/components/Footer.astro";
       let isEligible = false;
       let reason = "";
 
-      const isProgramChecked = Array.from(programCbs).some(cb => cb.checked);
+      // Add HTMLInputElement type assertion for .checked property
+      const isProgramChecked = Array.from(programCbs).some(cb => (cb as HTMLInputElement).checked);
       
       if (isProgramChecked) {
         isEligible = true;
@@ -1548,7 +1575,6 @@ import Footer from "@/components/Footer.astro";
     });
   };
 
-  // Wait for the page load without blocking rendering
   document.addEventListener('astro:page-load', () => requestAnimationFrame(initChecker));
   document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(initChecker));
 </script>

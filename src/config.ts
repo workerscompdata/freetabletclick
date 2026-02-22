@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://freetabletclick.pages.dev/", // replace this with your deployed domain
+  website: "https://freetablet.click/", // replace this with your deployed domain
   author: "Sat Naing",
   profile: "https://satnaing.dev/",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",

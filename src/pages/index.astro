@@ -1357,274 +1357,224 @@ import Footer from "@/components/Footer.astro";
       </div>
     </section>
 
-   
-        <!-- ==========================================
+    <!-- FAQ Search Logic (Non-blocking, Ultra-fast) -->
+    <script>
+      document.addEventListener('astro:page-load', () => {
+        const searchInput = document.getElementById('faq-search');
+        if (!searchInput) return;
+
+        searchInput.addEventListener('input', (e) => {
+          const term = e.target.value.toLowerCase();
+          const items = document.querySelectorAll('.faq-item');
+          
+          items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (text.includes(term)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- ==========================================
          SECTION 11: FINAL CTA & E-E-A-T TRUST BLOCK
     =========================================== -->
-
-    <section id="final-cta" class="relative w-full py-20 lg:py-28 bg-[#0f172a] text-white border-t border-white/10 overflow-hidden">
-      <!-- Performance-optimized gradients -->
-      <div
-        class="absolute inset-0 z-0 pointer-events-none"
-        style="
-          background-image:
-            radial-gradient(circle at top center, rgba(37, 99, 235, 0.22), transparent 45%),
-            radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.16), transparent 45%),
-            linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 1));
-        "
-      ></div>
+    <section id="final-cta" class="relative w-full py-20 lg:py-28 bg-[#0f172a] text-white border-t border-border overflow-hidden">
+      
+      <!-- Performance optimized CSS gradient instead of blur -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" style="background-image: radial-gradient(circle at top center, rgba(37, 99, 235, 0.2), transparent 60%);"></div>
 
       <div class="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          <!-- Left: CTA -->
-          <div class="lg:col-span-7">
-            <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-bold text-blue-100 mb-6">
-              <svg class="w-4 h-4 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Updated for 2026 eligibility rules
-            </div>
-
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-              Ready to check your eligibility and apply safely?
-            </h2>
-
-            <p class="mt-5 text-lg text-blue-100/90 leading-relaxed max-w-2xl">
-              Use the eligibility checker, then review providers and your state guide before submitting documents. We focus on clear program rules, realistic device expectations, and scam-safe steps.
-            </p>
-
-            <div class="mt-8 flex flex-col sm:flex-row gap-4">
-              <a
-                href="#checker"
-                class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-xl hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-all duration-300"
-              >
-                Check Eligibility
-                <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </a>
-
-              <a
-                href="#providers-directory"
-                class="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-8 py-4 text-lg font-bold text-white hover:bg-white/10 transition-all duration-300"
-              >
-                Compare Providers
-              </a>
-            </div>
-
-            <p class="mt-6 text-xs text-blue-200/70 leading-relaxed max-w-2xl">
-              Eligibility, device inventory, and any co-pay requirements vary by provider and location. One Lifeline benefit per household rules apply.
-            </p>
+        
+        <!-- Main CTA Area -->
+        <div class="text-center max-w-4xl mx-auto mb-20">
+          <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6 text-white">
+            Do Not Let the Digital Divide Hold You Back
+          </h2>
+          <p class="text-lg text-blue-100 leading-relaxed mb-10 max-w-3xl mx-auto">
+            Whether you are a senior needing telehealth access, a student needing a reliable device for school, or a family searching for a <strong>free government tablet</strong>, we are here to help you find the safest and most realistic path. Check eligibility, compare providers, and apply with confidence using up-to-date 2026 guidance.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <a href="#checker" aria-label="Apply now by navigating to the eligibility checker" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-10 py-5 text-xl font-bold text-white shadow-xl hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 transition-all duration-300 transform hover:-translate-y-1 w-full sm:w-auto">
+              Apply Now - It Is Free to Check
+            </a>
+            <a href="mailto:support@freetablet.click" aria-label="Send an email to contact support" class="inline-flex items-center justify-center rounded-lg border-2 border-white/20 bg-white/5 backdrop-blur-sm px-10 py-5 text-xl font-bold text-white hover:bg-white/10 transition-all duration-300 w-full sm:w-auto">
+              Contact Support
+            </a>
           </div>
 
-          <!-- Right: Trust Block -->
-          <div class="lg:col-span-5">
-            <div class="rounded-2xl border border-white/10 bg-white/5 p-7 sm:p-8 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
-              <div class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-xl bg-green-500/15 text-green-300 flex items-center justify-center shrink-0">
-                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-xl font-extrabold">Trust and Transparency</h3>
-                  <p class="mt-2 text-sm text-blue-100/85 leading-relaxed">
-                    We explain what is federally supported (service discounts) versus what is provider-driven (tablet availability, shipping, and any optional upgrades). We do not promise guaranteed approval or premium devices.
-                  </p>
-                </div>
-              </div>
-
-              <div class="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="rounded-xl border border-white/10 bg-black/10 p-5">
-                  <p class="text-xs font-bold uppercase tracking-wider text-blue-200/80">Eligibility basis</p>
-                  <p class="mt-2 text-sm font-semibold text-white">
-                    Qualifying program or income-based rules
-                  </p>
-                </div>
-                <div class="rounded-xl border border-white/10 bg-black/10 p-5">
-                  <p class="text-xs font-bold uppercase tracking-wider text-blue-200/80">Scam protection</p>
-                  <p class="mt-2 text-sm font-semibold text-white">
-                    No instant-approval claims, no fake ACP offers
-                  </p>
-                </div>
-                <div class="rounded-xl border border-white/10 bg-black/10 p-5">
-                  <p class="text-xs font-bold uppercase tracking-wider text-blue-200/80">Household rule</p>
-                  <p class="mt-2 text-sm font-semibold text-white">
-                    One Lifeline benefit per household
-                  </p>
-                </div>
-                <div class="rounded-xl border border-white/10 bg-black/10 p-5">
-                  <p class="text-xs font-bold uppercase tracking-wider text-blue-200/80">What to expect</p>
-                  <p class="mt-2 text-sm font-semibold text-white">
-                    Devices vary by provider and inventory
-                  </p>
-                </div>
-              </div>
-
-              <div class="mt-7 rounded-xl border border-white/10 bg-white/5 p-5">
-                <p class="text-xs font-bold uppercase tracking-wider text-blue-200/80 mb-2">Note</p>
-                <p class="text-sm text-blue-100/85 leading-relaxed">
-                  If another adult at your address already receives Lifeline, you may be asked for a household worksheet to confirm a separate household.
-                </p>
-              </div>
-            </div>
-          </div>
+          <p class="mt-8 text-sm text-blue-200 leading-relaxed max-w-3xl mx-auto font-medium">
+            Updated guidance based on federal Lifeline information, HUD ConnectHomeUSA digital inclusion resources, and VA telehealth connectivity pathways. Provider offers and local availability vary. (Universal Service Administrative Company)
+          </p>
         </div>
 
-        <!-- Footer divider -->
-        <div class="mt-14 border-t border-white/10 pt-8">
-          <p class="text-xs text-blue-200/70 leading-relaxed text-center">
-            This site provides program information and comparison guidance. Provider terms and availability can change.
-          </p>
+        <!-- E-E-A-T Microcopy & Contact Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12 border-t border-white/10 text-left">
+          
+          <!-- E-E-A-T Block 1 -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-blue-400 mb-1">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+              <h3 class="font-bold text-white uppercase tracking-wider text-sm">How We Keep This Page Updated</h3>
+            </div>
+            <p class="text-sm text-blue-100 leading-relaxed font-medium">
+              We review official program information, provider changes, and public agency updates regularly so users are not misled by outdated ACP-era pages.
+            </p>
+          </div>
+
+          <!-- E-E-A-T Block 2 -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-blue-400 mb-1">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              <h3 class="font-bold text-white uppercase tracking-wider text-sm">Editorial Standards</h3>
+            </div>
+            <p class="text-sm text-blue-100 leading-relaxed font-medium">
+              This page is written for educational and informational purposes to help users understand eligibility pathways and compare options. Final approval, device inventory, and plan details are determined by participating providers.
+            </p>
+          </div>
+
+          <!-- Professional Contact Block -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-blue-400 mb-1">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              <h3 class="font-bold text-white uppercase tracking-wider text-sm">Official Contact Channels</h3>
+            </div>
+            <ul class="text-sm text-blue-100 space-y-2 font-medium">
+              <li class="flex items-center justify-between">
+                <span>General Support:</span>
+                <a href="mailto:support@freetablet.click" class="text-blue-300 hover:text-white transition-colors">support@freetablet.click</a>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Compliance & Legal:</span>
+                <a href="mailto:compliance@freetablet.click" class="text-blue-300 hover:text-white transition-colors">compliance@freetablet.click</a>
+              </li>
+              <li class="flex items-center justify-between">
+                <span>Editorial Team:</span>
+                <a href="mailto:editorial@freetablet.click" class="text-blue-300 hover:text-white transition-colors">editorial@freetablet.click</a>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
 
   </main>
-
+  
   <Footer />
 </Layout>
 
-<!-- ==========================================
-     ELIGIBILITY CHECKER LOGIC (FAST, NO LIBS)
-=========================================== -->
+<!-- FAQ Search Logic (Non-blocking, Ultra-fast) -->
 <script>
   document.addEventListener('astro:page-load', () => {
-    const verifyBtn = document.getElementById('verify-btn');
-    if (!verifyBtn) return;
+    const searchInput = document.getElementById('faq-search') as HTMLInputElement | null;
+    if (!searchInput) return;
 
-    const programCbs = Array.from(document.querySelectorAll('.program-cb'));
-    const householdSizeEl = document.getElementById('household-size');
-    const annualIncomeEl = document.getElementById('annual-income');
-
-    const resultBox = document.getElementById('result-box');
-    const resultIcon = document.getElementById('result-icon');
-    const resultTitle = document.getElementById('result-title');
-    const resultMsg = document.getElementById('result-message');
-    const resultAction = document.getElementById('result-action');
-
-    const incomeThresholds = {
-      1: 20000,
-      2: 27000,
-      3: 34000,
-      4: 41000,
-      5: 48000,
-      6: 55000
-    };
-
-    function showResult(type, title, message, showAction) {
-      if (!resultBox) return;
-
-      resultBox.classList.remove('hidden');
-
-      // Reset styling
-      resultBox.className = 'mt-6 p-6 rounded-xl border';
-      resultIcon.innerHTML = '';
-      resultTitle.className = 'text-lg font-bold';
-      resultMsg.className = 'text-sm mt-2 font-medium leading-relaxed';
-      resultAction.classList.add('hidden');
-
-      if (type === 'good') {
-        resultBox.classList.add('border-green-200', 'bg-green-50');
-        resultTitle.classList.add('text-green-900');
-        resultMsg.classList.add('text-green-800');
-        resultIcon.innerHTML = `
-          <div class="w-9 h-9 rounded-full bg-green-100 text-green-700 flex items-center justify-center">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-        `;
-      } else if (type === 'maybe') {
-        resultBox.classList.add('border-blue-200', 'bg-blue-50');
-        resultTitle.classList.add('text-blue-900');
-        resultMsg.classList.add('text-blue-800');
-        resultIcon.innerHTML = `
-          <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-        `;
-      } else {
-        resultBox.classList.add('border-orange-200', 'bg-orange-50');
-        resultTitle.classList.add('text-orange-900');
-        resultMsg.classList.add('text-orange-800');
-        resultIcon.innerHTML = `
-          <div class="w-9 h-9 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
-            </svg>
-          </div>
-        `;
-      }
-
-      resultTitle.textContent = title;
-      resultMsg.textContent = message;
-
-      if (showAction && resultAction) {
-        resultAction.classList.remove('hidden');
-      }
-    }
-
-    verifyBtn.addEventListener('click', () => {
-      const selectedPrograms = programCbs.filter(cb => cb.checked).map(cb => cb.value);
-      const householdSize = householdSizeEl ? parseInt(householdSizeEl.value, 10) : 1;
-      const incomeValRaw = annualIncomeEl ? annualIncomeEl.value : '';
-      const incomeVal = incomeValRaw === '' ? NaN : Number(incomeValRaw);
-
-      // Program-based eligibility
-      if (selectedPrograms.length > 0) {
-        showResult(
-          'good',
-          'Likely Eligible (Program-Based)',
-          'Because you participate in a qualifying program, you may qualify under program-based rules. Next, compare providers and confirm availability in your ZIP code.',
-          true
-        );
-        return;
-      }
-
-      // Income-based eligibility
-      if (!Number.isFinite(incomeVal) || incomeVal <= 0) {
-        showResult(
-          'maybe',
-          'Add Your Income to Check the Income Path',
-          'Select your household size and enter an estimated annual income to check income-based eligibility.',
-          false
-        );
-        return;
-      }
-
-      const key = householdSize >= 6 ? 6 : householdSize;
-      const threshold = incomeThresholds[key];
-
-      if (incomeVal <= threshold) {
-        showResult(
-          'good',
-          'Likely Eligible (Income-Based)',
-          'Your estimate looks within common income-based ranges used for support programs. Next, compare providers and confirm enrollment steps for your state.',
-          true
-        );
-      } else if (incomeVal <= threshold * 1.15) {
-        showResult(
-          'maybe',
-          'Possibly Eligible (Near the Limit)',
-          'Your estimate is close to typical income thresholds. You may still qualify depending on official guidelines and household details. Compare providers and verify requirements.',
-          true
-        );
-      } else {
-        showResult(
-          'warn',
-          'Not Clearly Eligible From This Quick Check',
-          'Based on this estimate, you may not qualify through the basic income path. Some users still qualify through other program-based pathways. Review state and local options.',
-          true
-        );
-      }
+    searchInput.addEventListener('input', (e) => {
+      const target = e.target as HTMLInputElement;
+      if (!target) return;
+      
+      const term = target.value.toLowerCase();
+      const items = document.querySelectorAll('.faq-item');
+      
+      items.forEach((item) => {
+        const el = item as HTMLElement;
+        const text = el.textContent?.toLowerCase() || '';
+        if (text.includes(term)) {
+          el.style.display = 'block';
+        } else {
+          el.style.display = 'none';
+        }
+      });
     });
   });
+</script>
+
+<!-- Eligibility Checker Logic - TS Typed -->
+<script>
+  const initChecker = () => {
+    const verifyBtn = document.getElementById("verify-btn");
+    const programCbs = document.querySelectorAll(".program-cb");
+    const householdSizeInput = document.getElementById("household-size") as HTMLSelectElement | null;
+    const incomeInput = document.getElementById("annual-income") as HTMLInputElement | null;
+    const resultBox = document.getElementById("result-box");
+    const resultIcon = document.getElementById("result-icon");
+    const resultTitle = document.getElementById("result-title");
+    const resultMessage = document.getElementById("result-message");
+    const resultAction = document.getElementById("result-action");
+
+    // TypeScript strict check: ensure elements exist
+    if(!verifyBtn || !householdSizeInput || !incomeInput || !resultBox || !resultIcon || !resultTitle || !resultMessage || !resultAction) return; 
+
+    const baseIncomeLimit = 21128;
+    const additionalPersonLimit = 7425;
+
+    verifyBtn.addEventListener("click", () => {
+      let isEligible = false;
+      let reason = "";
+
+      // Add HTMLInputElement type assertion for .checked property
+      const isProgramChecked = Array.from(programCbs).some(cb => (cb as HTMLInputElement).checked);
+      
+      if (isProgramChecked) {
+        isEligible = true;
+        reason = "Based on your participation in a qualifying government program, you are highly likely to be eligible for a free government tablet and internet discounts.";
+      } else {
+        const size = parseInt(householdSizeInput.value) || 1;
+        const incomeValue = incomeInput.value.trim();
+        
+        if (incomeValue !== "") {
+          const income = parseFloat(incomeValue);
+          const incomeThreshold = baseIncomeLimit + ((size - 1) * additionalPersonLimit);
+          
+          if (income <= incomeThreshold) {
+            isEligible = true;
+            reason = `Based on your household size of ${size} and estimated income, you fall below the 135% Federal Poverty Guideline limit (approx. $${incomeThreshold.toLocaleString()}), meaning you are likely eligible.`;
+          } else {
+            reason = `Based on the provided income and household size, your income appears to be above the standard 135% Federal Poverty Guideline threshold (approx. $${incomeThreshold.toLocaleString()}). However, local programs may still be available.`;
+          }
+        } else {
+           resultBox.classList.remove("hidden", "bg-green-50", "border-green-200", "bg-red-50", "border-red-200");
+           resultBox.classList.add("bg-orange-50", "border-orange-200", "text-orange-900");
+           resultIcon.innerHTML = `<svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>`;
+           resultTitle.innerText = "Information Needed";
+           resultTitle.className = "text-lg font-bold text-orange-800";
+           resultMessage.innerText = "Please either select a qualifying program or enter your household income to check eligibility.";
+           resultMessage.className = "text-sm mt-2 font-medium leading-relaxed text-orange-800";
+           resultAction.classList.add("hidden");
+           return;
+        }
+      }
+
+      resultBox.classList.remove("hidden", "bg-orange-50", "border-orange-200");
+      if (isEligible) {
+        resultBox.classList.add("bg-green-50", "border-green-200");
+        resultBox.classList.remove("bg-red-50", "border-red-200");
+        
+        resultIcon.innerHTML = `<svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`;
+        resultTitle.innerText = "Great News! You Are Likely Eligible.";
+        resultTitle.className = "text-lg font-bold text-green-800";
+        resultMessage.innerText = reason;
+        resultMessage.className = "text-sm mt-2 font-medium leading-relaxed text-green-800";
+        resultAction.classList.remove("hidden");
+      } else {
+        resultBox.classList.add("bg-red-50", "border-red-200");
+        resultBox.classList.remove("bg-green-50", "border-green-200");
+        
+        resultIcon.innerHTML = `<svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>`;
+        resultTitle.innerText = "Eligibility Not Confirmed";
+        resultTitle.className = "text-lg font-bold text-red-800";
+        resultMessage.innerText = reason;
+        resultMessage.className = "text-sm mt-2 font-medium leading-relaxed text-red-800";
+        resultAction.classList.add("hidden");
+      }
+    });
+  };
+
+  document.addEventListener('astro:page-load', () => requestAnimationFrame(initChecker));
+  document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(initChecker));
 </script>
